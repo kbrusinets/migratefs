@@ -1,3 +1,11 @@
+## [Version 0.0.2](https://github.com/akaguny/migratefs/releases/tag/v0.0.2) (2018-3-12)
+
+### Bug fixes
+
+- chore(package.json): add some dependence: [`bdf677c`](https://github.com/akaguny/migratefs/commit/bdf677c)
+
+[...full changes](https://github.com/akaguny/migratefs/compare/v0.0.1...v0.0.2)
+
 ## [Version 0.0.1](https://github.com/akaguny/migratefs/releases/tag/v0.0.1) (2018-3-11)
 
 ### New features
