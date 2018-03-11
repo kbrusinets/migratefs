@@ -4,7 +4,7 @@
   "description": "migrate file structure script nodejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,14 @@
   "homepage": "https://github.com/akaguny/migratefs#readme",
   "devDependencies": {
     "changelog.md": "^1.1.0",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "fs-file-tree": "^1.0.6",
     "jest": "^22.4.2"
+  },
+  "dependencies": {
+    "fast-glob": "^2.2.0",
+    "fs-extra": "^5.0.0"
   }
 }
