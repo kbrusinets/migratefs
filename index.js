@@ -13,15 +13,13 @@ async function migratefs(config, baseFrom, baseTo) {
   process.chdir(baseFrom);
 
   forEach(config, (to, from) => {
-    migrate.push(glob(from).then((entries) => {
-    return entries.map(async function (element) {
-      return fs.lstat(element).then(stats => {
-        stats.isFile() ? dest = path.join(baseTo, to, path.basename(element)) : dest = path.join(baseTo, to);
-      return fs.copy(element, dest);
-    });
-    });
-}));
-});
+    migrate.push(glob(from).then(entries =>
+      entries.map(async element =>
+        fs.lstat(element).then((stats) => {
+          stats.isFile() ? dest = path.join(baseTo, to, path.basename(element)) : dest = path.join(baseTo, to);
+          return Promise.resolve(fs.copySync(element, dest));
+        }))));
+  });
 
   return Promise.all(migrate);
 }
