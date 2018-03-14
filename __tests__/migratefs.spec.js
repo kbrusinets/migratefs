@@ -6,9 +6,13 @@ const fs = require('fs-extra');
 describe('migratefs', () => {
   const tempDir = 'temp/migrated-to/';
 
-  beforeAll(async () => {
+  beforeEach(async () => {
     await fs.remove(tempDir);
     await fs.ensureDir(tempDir);
+  });
+
+  afterEach(async () => {
+    await fs.remove(tempDir);
   });
 
   it('migrateFunctionExist', () => {
@@ -23,9 +27,9 @@ describe('migratefs', () => {
     };
     const cwd = './fixtures/folders/original-from';
     const expectedFileStructure = {
-      'server.py': jasmine.any(Object),
-      'setup.sql': jasmine.any(Object),
-      'script.js': jasmine.any(Object)
+      'server.py': expect.any(Object),
+      'setup.sql': expect.any(Object),
+      'script.js': expect.any(Object),
     };
     await migratefs(migrateConfig, __dirname, __dirname);
     expect(await readFileStructure(tempDir)).toEqual(expectedFileStructure);

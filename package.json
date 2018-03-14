@@ -28,7 +28,8 @@
     "jest": "^22.4.2"
   },
   "dependencies": {
-    "fast-glob": "^2.2.0",
-    "fs-extra": "^5.0.0"
+    "fs-extra": "^5.0.0",
+    "glob": "^7.1.2",
+    "lodash.foreach": "4.5.0"
   }
 }
